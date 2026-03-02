@@ -1,0 +1,1833 @@
+﻿<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عينات المواد التدريبية | تحميل PDF | تكاليف</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #1e4a3b 0%, #2d6a4e 100%);
+            padding: 40px 20px;
+            color: #1e3a3a;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 50, 30, 0.35);
+            overflow: hidden;
+        }
+        
+        /* الهيدر */
+        .header {
+            background: linear-gradient(135deg, #0e3b2c 0%, #1b5e3f 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "📚";
+            position: absolute;
+            left: -30px;
+            bottom: -30px;
+            font-size: 250px;
+            opacity: 0.1;
+            transform: rotate(-10deg);
+        }
+        
+        .header::after {
+            content: "📖";
+            position: absolute;
+            right: -30px;
+            top: -30px;
+            font-size: 250px;
+            opacity: 0.1;
+            transform: rotate(10deg);
+        }
+        
+        .header h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header p {
+            font-size: 22px;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-border {
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, #52b788, #2d6a4e);
+            margin: 30px auto;
+            border-radius: 2px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .samples-badge {
+            display: inline-block;
+            background: #f4c542;
+            color: #1e4a3b;
+            padding: 15px 45px;
+            border-radius: 50px;
+            font-size: 28px;
+            font-weight: 800;
+            margin-top: 20px;
+            border: 3px solid white;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .export-badge {
+            display: inline-block;
+            background: #52b788;
+            color: #1e4a3b;
+            padding: 10px 35px;
+            border-radius: 50px;
+            font-size: 22px;
+            font-weight: 700;
+            margin-right: 15px;
+            border: 2px solid white;
+        }
+        
+        /* المحتوى الرئيسي */
+        .content {
+            padding: 50px;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            color: #1e4a3b;
+            margin-bottom: 30px;
+            font-weight: 800;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 32px;
+            color: #2d6a4e;
+            margin: 60px 0 30px;
+            font-weight: 700;
+            border-right: 8px solid #52b788;
+            padding-right: 20px;
+        }
+        
+        /* بطاقة تعريفية */
+        .intro-card {
+            background: #f8faf8;
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 2px solid #52b788;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .intro-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #2d6a4e;
+        }
+        
+        .intro-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .stat-circle {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            border: 2px solid #c8e0c8;
+        }
+        
+        .stat-number {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1e4a3b;
+        }
+        
+        .stat-label {
+            color: #2d6a4e;
+            font-size: 16px;
+        }
+        
+        /* قائمة المحاور */
+        .topics-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .topic-item {
+            background: #f8faf8;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid #52b788;
+            font-weight: 700;
+            color: #1e4a3b;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .topic-item:hover {
+            background: #1e4a3b;
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .topic-item i {
+            display: block;
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #52b788;
+        }
+        
+        .topic-item:hover i {
+            color: white;
+        }
+        
+        /* شبكة العينات */
+        .samples-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            margin: 50px 0;
+        }
+        
+        .sample-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 2px solid #52b788;
+            transition: all 0.4s;
+            position: relative;
+            box-shadow: 0 15px 25px -15px rgba(0,0,0,0.2);
+        }
+        
+        .sample-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 35px -15px #1e4a3b;
+        }
+        
+        .sample-header {
+            background: linear-gradient(135deg, #1e4a3b 0%, #2d6a4e 100%);
+            color: white;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sample-header::after {
+            content: "📄";
+            position: absolute;
+            left: -20px;
+            bottom: -20px;
+            font-size: 100px;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+        
+        .sample-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .sample-header h3 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .sample-header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .sample-content {
+            padding: 30px;
+        }
+        
+        .sample-desc {
+            color: #2d6a4e;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .sample-objectives {
+            background: #f0f9f0;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .sample-objectives h4 {
+            color: #1e4a3b;
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .sample-objectives ul {
+            list-style: none;
+        }
+        
+        .sample-objectives li {
+            margin-bottom: 10px;
+            padding-right: 25px;
+            position: relative;
+            color: #2d6a4e;
+            font-size: 14px;
+        }
+        
+        .sample-objectives li::before {
+            content: "✓";
+            color: #52b788;
+            font-weight: 700;
+            position: absolute;
+            right: 0;
+        }
+        
+        .sample-preview {
+            background: #f8faf8;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px dashed #52b788;
+        }
+        
+        .preview-title {
+            color: #1e4a3b;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .preview-content {
+            font-family: 'Cairo', sans-serif;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #2d6a4e;
+            max-height: 150px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .preview-content::after {
+            content: "...";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to bottom, transparent, #f8faf8);
+            height: 40px;
+        }
+        
+        .sample-footer {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-pdf {
+            flex: 1;
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Cairo', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+        
+        .btn-pdf:hover {
+            background: #bb2d3b;
+            transform: translateY(-3px);
+        }
+        
+        .btn-word {
+            flex: 1;
+            background: #1e4a3b;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Cairo', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+        
+        .btn-word:hover {
+            background: #2d6a4e;
+            transform: translateY(-3px);
+        }
+        
+        .btn-preview {
+            flex: 1;
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Cairo', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+        
+        .btn-preview:hover {
+            background: #5a6268;
+            transform: translateY(-3px);
+        }
+        
+        /* نافذة المعاينة */
+        .preview-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            padding: 40px;
+            overflow-y: auto;
+        }
+        
+        .preview-modal-content {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 30px;
+            padding: 40px;
+            position: relative;
+            direction: rtl;
+        }
+        
+        .preview-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e4f2e4;
+        }
+        
+        .preview-modal-header h2 {
+            color: #1e4a3b;
+            font-size: 28px;
+        }
+        
+        .preview-modal-close {
+            background: none;
+            border: none;
+            font-size: 40px;
+            cursor: pointer;
+            color: #1e4a3b;
+        }
+        
+        .preview-page {
+            background: white;
+            border-radius: 0;
+            padding: 40px;
+            direction: rtl;
+            font-family: 'Cairo', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #e4f2e4;
+        }
+        
+        .preview-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #1e4a3b;
+        }
+        
+        .preview-header .company {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1e4a3b;
+        }
+        
+        .preview-header .title {
+            font-size: 26px;
+            color: #2d6a4e;
+            margin-top: 10px;
+            font-weight: 700;
+        }
+        
+        .preview-header .subtitle {
+            font-size: 16px;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        
+        .preview-section {
+            margin-bottom: 30px;
+        }
+        
+        .preview-section-title {
+            color: #1e4a3b;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-right: 10px;
+            border-right: 5px solid #52b788;
+        }
+        
+        .preview-content {
+            color: #2d6a4e;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+        .preview-list {
+            list-style: none;
+            margin-right: 20px;
+        }
+        
+        .preview-list li {
+            margin-bottom: 8px;
+            padding-right: 20px;
+            position: relative;
+        }
+        
+        .preview-list li::before {
+            content: "•";
+            color: #52b788;
+            font-weight: 700;
+            position: absolute;
+            right: 0;
+            font-size: 18px;
+        }
+        
+        .preview-footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #e4f2e4;
+            text-align: center;
+            color: #2d6a4e;
+            font-size: 14px;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .btn-download-pdf {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn-download-pdf:hover {
+            background: #bb2d3b;
+            transform: scale(1.05);
+        }
+        
+        .btn-download-word {
+            background: #1e4a3b;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn-download-word:hover {
+            background: #2d6a4e;
+            transform: scale(1.05);
+        }
+        
+        /* حزمة التحميل */
+        .bundle-section {
+            background: linear-gradient(135deg, #1e4a3b 0%, #2d6a4e 100%);
+            border-radius: 40px;
+            padding: 60px;
+            margin: 60px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .bundle-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        
+        .bundle-features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .bundle-feature {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 25px;
+            border-radius: 60px;
+            font-size: 16px;
+            border: 2px solid white;
+        }
+        
+        .bundle-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-bundle-pdf {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 60px;
+            font-size: 24px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn-bundle-word {
+            background: #f4c542;
+            color: #1e4a3b;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 60px;
+            font-size: 24px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn-bundle-pdf:hover, .btn-bundle-word:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 30px -10px black;
+        }
+        
+        /* الفوتر */
+        .footer {
+            background: #f0f9f0;
+            padding: 40px;
+            text-align: center;
+            border-top: 2px solid #52b788;
+        }
+        
+        .footer .company {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1e4a3b;
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 38px; }
+            .content { padding: 25px; }
+            .intro-card,
+            .samples-grid,
+            .topics-list {
+                grid-template-columns: 1fr;
+            }
+            .sample-footer {
+                flex-direction: column;
+            }
+            .bundle-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- الهيدر -->
+    <div class="header">
+        <h1>📚 عينات من المواد التدريبية</h1>
+        <h2>محتوى الدورة التدريبية المتكاملة</h2>
+        <div class="header-border"></div>
+        <p>
+            نماذج حصرية من 7 محاور تدريبية متخصصة في المحاسبة والمالية
+            <br>مع إمكانية التحميل بصيغة PDF و Word
+        </p>
+        <div>
+            <span class="samples-badge">7 محاور تدريبية</span>
+            <span class="export-badge">📥 PDF - Word</span>
+        </div>
+    </div>
+    
+    <!-- المحتوى الرئيسي -->
+    <div class="content">
+        <!-- قسم التعريف -->
+        <div class="intro-card">
+            <div class="intro-text">
+                <h3 style="color: #1e4a3b; font-size: 32px; margin-bottom: 20px;">🎯 عن المواد التدريبية</h3>
+                <p style="margin-bottom: 20px;">
+                    نقدم لك عينات حصرية من محتوى الدورات التدريبية المتكاملة في المجال المحاسبي والمالي، 
+                    تشمل 7 محاور رئيسية تغطي الجوانب النظرية والعملية.
+                </p>
+                <p>
+                    <strong>جميع العينات</strong> متاحة للتحميل بصيغة PDF و Word، مع إمكانية معاينة المحتوى قبل التحميل.
+                </p>
+            </div>
+            
+            <div class="intro-stats">
+                <div class="stat-circle">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">محاور تدريبية</div>
+                </div>
+                <div class="stat-circle">
+                    <div class="stat-number">35+</div>
+                    <div class="stat-label">موضوع فرعي</div>
+                </div>
+                <div class="stat-circle">
+                    <div class="stat-number">PDF</div>
+                    <div class="stat-label">للتحميل</div>
+                </div>
+                <div class="stat-circle">
+                    <div class="stat-number">Word</div>
+                    <div class="stat-label">قابل للتعديل</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- قائمة المحاور -->
+        <h3 class="section-subtitle">📋 المحاور التدريبية</h3>
+        
+        <div class="topics-list">
+            <div class="topic-item">
+                <i class="fas fa-book-open"></i>
+                مقدمة في المحاسبة
+            </div>
+            <div class="topic-item">
+                <i class="fas fa-cogs"></i>
+                أنظمة المحاسبة المتقدمة
+            </div>
+            <div class="topic-item">
+                <i class="fas fa-file-invoice"></i>
+                المحاسبة الضريبية
+            </div>
+            <div class="topic-item">
+                <i class="fas fa-chart-line"></i>
+                التقارير المالية وتحليل البيانات
+            </div>
+            <div class="topic-item">
+                <i class="fas fa-store"></i>
+                المحاسبة للمشاريع الصغيرة والمتوسطة
+            </div>
+            <div class="topic-item">
+                <i class="fas fa-shield-alt"></i>
+                الامتثال والرقابة الداخلية
+            </div>
+            <div class="topic-item">
+                <i class="fas fa-sync-alt"></i>
+                إعادة هيكلة الشركات
+            </div>
+        </div>
+        
+        <!-- شبكة العينات -->
+        <h3 class="section-subtitle">📑 عينات المحتوى التدريبي</h3>
+        
+        <div class="samples-grid" id="samplesGrid">
+            <!-- 1. مقدمة في المحاسبة -->
+            <div class="sample-card" id="sample1">
+                <div class="sample-header">
+                    <div class="sample-icon">📘</div>
+                    <h3>مقدمة في المحاسبة</h3>
+                    <p>المفاهيم الأساسية والمبادئ المحاسبية</p>
+                </div>
+                <div class="sample-content">
+                    <p class="sample-desc">
+                        عينة من المحتوى التدريبي تشمل المفاهيم الأساسية للمحاسبة المالية، 
+                        المبادئ المحاسبية المقبولة عموماً، ودورة المحاسبة الكاملة.
+                    </p>
+                    
+                    <div class="sample-objectives">
+                        <h4><i class="fas fa-bullseye" style="color: #52b788;"></i> أهداف الوحدة</h4>
+                        <ul>
+                            <li>فهم المبادئ المحاسبية الأساسية</li>
+                            <li>التعرف على دورة المحاسبة</li>
+                            <li>إعداد القيود اليومية ودفاتر الأستاذ</li>
+                            <li>فهم مبدأ الاستحقاق والمقابلة</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sample-footer">
+                        <button class="btn-pdf" onclick="downloadPDF(1)">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="btn-word" onclick="downloadWord(1)">
+                            <i class="fas fa-file-word"></i> Word
+                        </button>
+                        <button class="btn-preview" onclick="previewSample(1)">
+                            <i class="fas fa-eye"></i> معاينة
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2. أنظمة المحاسبة المتقدمة -->
+            <div class="sample-card" id="sample2">
+                <div class="sample-header">
+                    <div class="sample-icon">⚙️</div>
+                    <h3>أنظمة المحاسبة المتقدمة</h3>
+                    <p>ERP - أنظمة محاسبية متكاملة</p>
+                </div>
+                <div class="sample-content">
+                    <p class="sample-desc">
+                        عينة من المحتوى التدريبي عن أنظمة المحاسبة المتقدمة وتطبيقاتها، 
+                        مع تركيز على أنظمة تخطيط الموارد ERP والبرامج المحاسبية المتخصصة.
+                    </p>
+                    
+                    <div class="sample-objectives">
+                        <h4><i class="fas fa-bullseye" style="color: #52b788;"></i> أهداف الوحدة</h4>
+                        <ul>
+                            <li>التعرف على أنواع الأنظمة المحاسبية</li>
+                            <li>فهم آلية عمل أنظمة ERP</li>
+                            <li>مقارنة بين البرامج المحاسبية</li>
+                            <li>تطبيقات عملية على أنظمة محاسبية</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sample-footer">
+                        <button class="btn-pdf" onclick="downloadPDF(2)">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="btn-word" onclick="downloadWord(2)">
+                            <i class="fas fa-file-word"></i> Word
+                        </button>
+                        <button class="btn-preview" onclick="previewSample(2)">
+                            <i class="fas fa-eye"></i> معاينة
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3. المحاسبة الضريبية -->
+            <div class="sample-card" id="sample3">
+                <div class="sample-header">
+                    <div class="sample-icon">📊</div>
+                    <h3>المحاسبة الضريبية</h3>
+                    <p>الضريبة على القيمة المضافة - ضريبة الدخل</p>
+                </div>
+                <div class="sample-content">
+                    <p class="sample-desc">
+                        عينة من المحتوى التدريبي عن المحاسبة الضريبية وأحدث التحديثات في النظام الضريبي، 
+                        مع تطبيقات عملية على الإقرارات الضريبية.
+                    </p>
+                    
+                    <div class="sample-objectives">
+                        <h4><i class="fas fa-bullseye" style="color: #52b788;"></i> أهداف الوحدة</h4>
+                        <ul>
+                            <li>فهم أنواع الضرائب في النظام المصري</li>
+                            <li>كيفية حساب ضريبة القيمة المضافة</li>
+                            <li>إعداد الإقرارات الضريبية</li>
+                            <li>التسويات الضريبية والمعالجات المحاسبية</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sample-footer">
+                        <button class="btn-pdf" onclick="downloadPDF(3)">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="btn-word" onclick="downloadWord(3)">
+                            <i class="fas fa-file-word"></i> Word
+                        </button>
+                        <button class="btn-preview" onclick="previewSample(3)">
+                            <i class="fas fa-eye"></i> معاينة
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 4. التقارير المالية وتحليل البيانات -->
+            <div class="sample-card" id="sample4">
+                <div class="sample-header">
+                    <div class="sample-icon">📈</div>
+                    <h3>التقارير المالية وتحليل البيانات</h3>
+                    <p>إعداد وتحليل القوائم المالية</p>
+                </div>
+                <div class="sample-content">
+                    <p class="sample-desc">
+                        عينة من المحتوى التدريبي عن إعداد التقارير المالية وتحليل البيانات باستخدام 
+                        النسب المالية والمؤشرات الحديثة.
+                    </p>
+                    
+                    <div class="sample-objectives">
+                        <h4><i class="fas fa-bullseye" style="color: #52b788;"></i> أهداف الوحدة</h4>
+                        <ul>
+                            <li>إعداد القوائم المالية الأساسية</li>
+                            <li>تحليل السيولة والربحية</li>
+                            <li>تحليل هيكل التمويل</li>
+                            <li>استخدام النسب المالية في التقييم</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sample-footer">
+                        <button class="btn-pdf" onclick="downloadPDF(4)">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="btn-word" onclick="downloadWord(4)">
+                            <i class="fas fa-file-word"></i> Word
+                        </button>
+                        <button class="btn-preview" onclick="previewSample(4)">
+                            <i class="fas fa-eye"></i> معاينة
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 5. المحاسبة للمشاريع الصغيرة والمتوسطة -->
+            <div class="sample-card" id="sample5">
+                <div class="sample-header">
+                    <div class="sample-icon">🏢</div>
+                    <h3>المحاسبة للمشاريع الصغيرة والمتوسطة</h3>
+                    <p>حلول محاسبية مبسطة للشركات الناشئة</p>
+                </div>
+                <div class="sample-content">
+                    <p class="sample-desc">
+                        عينة من المحتوى التدريبي المتخصص في المحاسبة للمشاريع الصغيرة والمتوسطة، 
+                        مع التركيز على التحديات والحلول المناسبة.
+                    </p>
+                    
+                    <div class="sample-objectives">
+                        <h4><i class="fas fa-bullseye" style="color: #52b788;"></i> أهداف الوحدة</h4>
+                        <ul>
+                            <li>أنظمة محاسبية مبسطة للمشاريع الصغيرة</li>
+                            <li>إدارة التدفقات النقدية</li>
+                            <li>التخطيط المالي للشركات الناشئة</li>
+                            <li>مؤشرات أداء خاصة بالمشاريع الصغيرة</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sample-footer">
+                        <button class="btn-pdf" onclick="downloadPDF(5)">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="btn-word" onclick="downloadWord(5)">
+                            <i class="fas fa-file-word"></i> Word
+                        </button>
+                        <button class="btn-preview" onclick="previewSample(5)">
+                            <i class="fas fa-eye"></i> معاينة
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 6. الامتثال والرقابة الداخلية -->
+            <div class="sample-card" id="sample6">
+                <div class="sample-header">
+                    <div class="sample-icon">🛡️</div>
+                    <h3>الامتثال والرقابة الداخلية</h3>
+                    <p>أنظمة الرقابة والحوكمة</p>
+                </div>
+                <div class="sample-content">
+                    <p class="sample-desc">
+                        عينة من المحتوى التدريبي عن أنظمة الرقابة الداخلية والامتثال للمعايير 
+                        والقوانين المنظمة.
+                    </p>
+                    
+                    <div class="sample-objectives">
+                        <h4><i class="fas fa-bullseye" style="color: #52b788;"></i> أهداف الوحدة</h4>
+                        <ul>
+                            <li>مبادئ الرقابة الداخلية</li>
+                            <li>تصميم أنظمة الرقابة</li>
+                            <li>الامتثال للمعايير المحاسبية</li>
+                            <li>مكافحة الاحتيال والغش</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sample-footer">
+                        <button class="btn-pdf" onclick="downloadPDF(6)">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="btn-word" onclick="downloadWord(6)">
+                            <i class="fas fa-file-word"></i> Word
+                        </button>
+                        <button class="btn-preview" onclick="previewSample(6)">
+                            <i class="fas fa-eye"></i> معاينة
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 7. إعادة هيكلة الشركات -->
+            <div class="sample-card" id="sample7">
+                <div class="sample-header">
+                    <div class="sample-icon">🔄</div>
+                    <h3>إعادة هيكلة الشركات</h3>
+                    <p>دمج - استحواذ - إعادة تنظيم</p>
+                </div>
+                <div class="sample-content">
+                    <p class="sample-desc">
+                        عينة من المحتوى التدريبي عن إعادة هيكلة الشركات، عمليات الدمج والاستحواذ، 
+                        وإعادة التنظيم المالي والإداري.
+                    </p>
+                    
+                    <div class="sample-objectives">
+                        <h4><i class="fas fa-bullseye" style="color: #52b788;"></i> أهداف الوحدة</h4>
+                        <ul>
+                            <li>أنواع إعادة الهيكلة</li>
+                            <li>عمليات الدمج والاستحواذ</li>
+                            <li>التقييم المالي للشركات</li>
+                            <li>المعالجات المحاسبية لإعادة الهيكلة</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sample-footer">
+                        <button class="btn-pdf" onclick="downloadPDF(7)">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="btn-word" onclick="downloadWord(7)">
+                            <i class="fas fa-file-word"></i> Word
+                        </button>
+                        <button class="btn-preview" onclick="previewSample(7)">
+                            <i class="fas fa-eye"></i> معاينة
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- حزمة المواد الكاملة -->
+        <div class="bundle-section">
+            <div class="bundle-title">📦 احصل على الحزمة الكاملة</div>
+            <p style="font-size: 22px; margin-bottom: 20px;">جميع المواد التدريبية (7 محاور) بصيغ PDF و Word</p>
+            
+            <div class="bundle-features">
+                <span class="bundle-feature">مقدمة في المحاسبة</span>
+                <span class="bundle-feature">أنظمة محاسبة متقدمة</span>
+                <span class="bundle-feature">محاسبة ضريبية</span>
+                <span class="bundle-feature">تقارير مالية</span>
+                <span class="bundle-feature">مشاريع صغيرة</span>
+                <span class="bundle-feature">امتثال ورقابة</span>
+                <span class="bundle-feature">إعادة هيكلة</span>
+            </div>
+            
+            <div class="bundle-buttons">
+                <button class="btn-bundle-pdf" onclick="downloadAllPDF()">
+                    <i class="fas fa-file-pdf"></i> تحميل جميع العينات PDF
+                </button>
+                <button class="btn-bundle-word" onclick="downloadAllWord()">
+                    <i class="fas fa-file-word"></i> تحميل جميع العينات Word
+                </button>
+            </div>
+            <p style="margin-top: 20px; font-size: 16px;">أكثر من 150 صفحة من المحتوى التدريبي المتخصص</p>
+        </div>
+        
+        <!-- الفوتر -->
+        <div class="footer">
+            <div class="company">تكاليف | حلول أعمال ذكية</div>
+            <div class="contact">
+                <span>📧 info@takalief.com</span>
+                <span>📞 +20 104 439 1177</span>
+                <span>🌐 https://takalief.com/short-training-courses/</span>
+            </div>
+            <p style="color: #1e4a3b; margin-top: 20px;">مواد تدريبية احترافية - جاهزة للاستخدام في التطوير المهني</p>
+        </div>
+    </div>
+</div>
+
+<!-- نافذة المعاينة -->
+<div id="previewModal" class="preview-modal" style="display: none;">
+    <div class="preview-modal-content">
+        <div class="preview-modal-header">
+            <h2 id="previewTitle">معاينة المادة التدريبية</h2>
+            <button class="preview-modal-close" onclick="closePreviewModal()">&times;</button>
+        </div>
+        
+        <div id="previewContent" class="preview-page">
+            <!-- محتوى المعاينة -->
+        </div>
+        
+        <div class="modal-buttons">
+            <button class="btn-download-pdf" onclick="downloadCurrentPDF()">
+                <i class="fas fa-file-pdf"></i> تحميل PDF
+            </button>
+            <button class="btn-download-word" onclick="downloadCurrentWord()">
+                <i class="fas fa-file-word"></i> تحميل Word
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<script>
+// بيانات العينات
+const samples = {
+    1: {
+        id: 1,
+        title: "مقدمة في المحاسبة",
+        subtitle: "المفاهيم الأساسية والمبادئ المحاسبية",
+        getHTML: function() {
+            return `
+                <div class="preview-header">
+                    <div class="company">تكاليف | حلول أعمال ذكية</div>
+                    <div class="title">${this.title}</div>
+                    <div class="subtitle">${this.subtitle}</div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">المفاهيم الأساسية</h3>
+                    <div class="preview-content">
+                        <p><strong>المحاسبة</strong> هي لغة الأعمال ونظام المعلومات الذي يقيس الأنشطة المالية ويعالج البيانات ويصدر تقارير للمستخدمين لاتخاذ القرارات.</p>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">المبادئ المحاسبية الأساسية</h3>
+                    <div class="preview-content">
+                        <ol class="preview-list">
+                            <li><strong>مبدأ الاستحقاق:</strong> تسجيل الإيرادات عند تحققها والمصروفات عند حدوثها بغض النظر عن المقبوضات والمدفوعات.</li>
+                            <li><strong>مبدأ الاستمرارية:</strong> افتراض استمرار المنشأة في نشاطها في المستقبل المنظور.</li>
+                            <li><strong>مبدأ الحيطة والحذر:</strong> عدم المبالغة في تقدير الأصول أو الإيرادات، وعدم التقليل في تقدير الالتزامات أو المصروفات.</li>
+                            <li><strong>مبدأ الثبات:</strong> استخدام نفس الأساليب المحاسبية من فترة لأخرى للمقارنة.</li>
+                            <li><strong>مبدأ الأهمية النسبية:</strong> الإفصاح عن المعلومات الجوهرية المؤثرة في القرارات.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">دورة المحاسبة</h3>
+                    <div class="preview-content">
+                        <ol class="preview-list">
+                            <li>تسجيل القيود اليومية</li>
+                            <li>الترحيل إلى دفتر الأستاذ</li>
+                            <li>إعداد ميزان المراجعة</li>
+                            <li>إجراء التسويات الجردية</li>
+                            <li>إعداد ميزان المراجعة بعد التسوية</li>
+                            <li>إعداد القوائم المالية</li>
+                            <li>إقفال الحسابات</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">القوائم المالية الأساسية</h3>
+                    <div class="preview-content">
+                        <ol class="preview-list">
+                            <li><strong>قائمة الدخل:</strong> الإيرادات - المصروفات = صافي الدخل</li>
+                            <li><strong>قائمة المركز المالي:</strong> الأصول = الخصوم + حقوق الملكية</li>
+                            <li><strong>قائمة التدفقات النقدية:</strong> الأنشطة التشغيلية، الاستثمارية، التمويلية</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="preview-footer">
+                    جميع الحقوق محفوظة © 2026 - تكاليف | حلول أعمال ذكية - مواد تدريبية 
+                </div>
+            `;
+        }
+    },
+    2: {
+        id: 2,
+        title: "أنظمة المحاسبة المتقدمة",
+        subtitle: "ERP - أنظمة محاسبية متكاملة",
+        getHTML: function() {
+            return `
+                <div class="preview-header">
+                    <div class="company">تكاليف | حلول أعمال ذكية</div>
+                    <div class="title">${this.title}</div>
+                    <div class="subtitle">${this.subtitle}</div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">أنظمة تخطيط الموارد (ERP)</h3>
+                    <div class="preview-content">
+                        <p>أنظمة متكاملة تهدف إلى دمج جميع عمليات المؤسسة في نظام واحد.</p>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">المكونات الرئيسية لأنظمة ERP</h3>
+                    <div class="preview-content">
+                        <ol class="preview-list">
+                            <li>المالية والمحاسبة (GL, AP, AR)</li>
+                            <li>الموارد البشرية (HR, Payroll)</li>
+                            <li>المشتريات والمخزون (Procurement, Inventory)</li>
+                            <li>المبيعات والتوزيع (Sales, Distribution)</li>
+                            <li>التصنيع والإنتاج (Manufacturing)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">أشهر أنظمة ERP</h3>
+                    <div class="preview-content">
+                        <ul class="preview-list">
+                            <li><strong>SAP:</strong> الأكثر انتشاراً في الشركات الكبرى</li>
+                            <li><strong>Oracle ERP:</strong> حلول متكاملة مع قواعد البيانات</li>
+                            <li><strong>Microsoft Dynamics:</strong> مناسب للشركات المتوسطة</li>
+                            <li><strong>Odoo:</strong> مفتوح المصدر ومناسب للشركات الصغيرة</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">فوائد تطبيق ERP</h3>
+                    <div class="preview-content">
+                        <ul class="preview-list">
+                            <li>قاعدة بيانات موحدة</li>
+                            <li>تقارير لحظية ودقيقة</li>
+                            <li>تكامل بين الإدارات</li>
+                            <li>تحسين الكفاءة وتقليل التكاليف</li>
+                            <li>دعم اتخاذ القرار</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="preview-footer">
+                    جميع الحقوق محفوظة © 2026 - تكاليف | حلول أعمال ذكية - مواد تدريبية 
+                </div>
+            `;
+        }
+    },
+    3: {
+        id: 3,
+        title: "المحاسبة الضريبية",
+        subtitle: "الضريبة على القيمة المضافة - ضريبة الدخل",
+        getHTML: function() {
+            return `
+                <div class="preview-header">
+                    <div class="company">تكاليف | حلول أعمال ذكية</div>
+                    <div class="title">${this.title}</div>
+                    <div class="subtitle">${this.subtitle}</div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">أنواع الضرائب في النظام المصري</h3>
+                    <div class="preview-content">
+                        <ol class="preview-list">
+                            <li><strong>ضريبة الدخل (Income Tax):</strong>
+                                <ul class="preview-list">
+                                    <li>الأفراد: شرائح ضريبية تصاعدية (0%، 10%، 15%، 20%، 22.5%)</li>
+                                    <li>الشركات: 22.5% للأرباح التجارية والصناعية</li>
+                                    <li>خصم الضريبة من المنبع (TAX withholding)</li>
+                                </ul>
+                            </li>
+                            <li><strong>ضريبة القيمة المضافة (VAT):</strong>
+                                <ul class="preview-list">
+                                    <li>نسبة 14% على معظم السلع والخدمات</li>
+                                    <li>آلية الحساب: ضريبة مخرجات - ضريبة مدخلات</li>
+                                    <li>تقديم إقرار شهري (بحلول اليوم 30 من الشهر التالي)</li>
+                                </ul>
+                            </li>
+                            <li><strong>الضريبة على المرتبات (Payroll Tax):</strong>
+                                <ul class="preview-list">
+                                    <li>خصم شهري من رواتب الموظفين</li>
+                                    <li>شرائح تصاعدية حسب الدخل السنوي</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">الالتزامات الضريبية للمنشآت</h3>
+                    <div class="preview-content">
+                        <ul class="preview-list">
+                            <li>التسجيل في مصلحة الضرائب</li>
+                            <li>إمساك دفاتر منتظمة</li>
+                            <li>إصدار فواتير ضريبية</li>
+                            <li>تقديم الإقرارات في مواعيدها</li>
+                            <li>سداد المستحقات الضريبية</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="preview-footer">
+                    جميع الحقوق محفوظة © 2026 - تكاليف | حلول أعمال ذكية - مواد تدريبية
+                </div>
+            `;
+        }
+    },
+    4: {
+        id: 4,
+        title: "التقارير المالية وتحليل البيانات",
+        subtitle: "إعداد وتحليل القوائم المالية",
+        getHTML: function() {
+            return `
+                <div class="preview-header">
+                    <div class="company">تكاليف | حلول أعمال ذكية</div>
+                    <div class="title">${this.title}</div>
+                    <div class="subtitle">${this.subtitle}</div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">القوائم المالية الأساسية</h3>
+                    <div class="preview-content">
+                        <ol class="preview-list">
+                            <li><strong>قائمة الدخل (Income Statement):</strong>
+                                <ul class="preview-list">
+                                    <li>الإيرادات</li>
+                                    <li>تكلفة المبيعات</li>
+                                    <li>= إجمالي الربح</li>
+                                    <li>- المصروفات التشغيلية</li>
+                                    <li>= صافي الربح التشغيلي</li>
+                                    <li>+/– الإيرادات/المصروفات غير التشغيلية</li>
+                                    <li>= صافي الربح قبل الضريبة</li>
+                                    <li>- الضريبة</li>
+                                    <li>= صافي الربح بعد الضريبة</li>
+                                </ul>
+                            </li>
+                            <li><strong>قائمة المركز المالي (Balance Sheet):</strong>
+                                <ul class="preview-list">
+                                    <li>الأصول = الخصوم + حقوق الملكية</li>
+                                    <li>الأصول المتداولة (النقد، العملاء، المخزون)</li>
+                                    <li>الأصول الثابتة (الأراضي، المباني، المعدات)</li>
+                                    <li>الخصوم المتداولة (الموردين، قروض قصيرة)</li>
+                                    <li>الخصوم طويلة الأجل (قروض بنكية)</li>
+                                    <li>حقوق الملكية (رأس المال، الاحتياطيات، الأرباح المحتجزة)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">النسب المالية الرئيسية</h3>
+                    <div class="preview-content">
+                        <ol class="preview-list">
+                            <li><strong>نسب السيولة:</strong>
+                                <ul class="preview-list">
+                                    <li>نسبة التداول = الأصول المتداولة ÷ الخصوم المتداولة</li>
+                                    <li>النسبة السريعة = (الأصول المتداولة - المخزون) ÷ الخصوم المتداولة</li>
+                                </ul>
+                            </li>
+                            <li><strong>نسب الربحية:</strong>
+                                <ul class="preview-list">
+                                    <li>هامش الربح الإجمالي = إجمالي الربح ÷ المبيعات</li>
+                                    <li>هامش الربح الصافي = صافي الربح ÷ المبيعات</li>
+                                    <li>العائد على الأصول (ROA) = صافي الربح ÷ إجمالي الأصول</li>
+                                    <li>العائد على حقوق الملكية (ROE) = صافي الربح ÷ حقوق الملكية</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="preview-footer">
+                    جميع الحقوق محفوظة © 2026 - تكاليف | حلول أعمال ذكية - مواد تدريبية
+                </div>
+            `;
+        }
+    },
+    5: {
+        id: 5,
+        title: "المحاسبة للمشاريع الصغيرة والمتوسطة",
+        subtitle: "حلول محاسبية مبسطة للشركات الناشئة",
+        getHTML: function() {
+            return `
+                <div class="preview-header">
+                    <div class="company">تكاليف | حلول أعمال ذكية</div>
+                    <div class="title">${this.title}</div>
+                    <div class="subtitle">${this.subtitle}</div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">تحديات المحاسبة في المشاريع الصغيرة</h3>
+                    <div class="preview-content">
+                        <ul class="preview-list">
+                            <li>قلة الموارد المالية</li>
+                            <li>عدم وجود نظام محاسبي متكامل</li>
+                            <li>نقص الخبرة المحاسبية</li>
+                            <li>صعوبة تطبيق المعايير المحاسبية</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">حلول محاسبية مبسطة</h3>
+                    <div class="preview-content">
+                        <ol class="preview-list">
+                            <li><strong>أنظمة محاسبية مناسبة:</strong>
+                                <ul class="preview-list">
+                                    <li>برامج محاسبية مبسطة (QuickBooks، Wafeq)</li>
+                                    <li>قوالب Excel محاسبية</li>
+                                    <li>أنظمة محاسبية سحابية</li>
+                                </ul>
+                            </li>
+                            <li><strong>إدارة التدفقات النقدية:</strong>
+                                <ul class="preview-list">
+                                    <li>إعداد قائمة تدفقات نقدية أسبوعية</li>
+                                    <li>متابعة فترة التحصيل من العملاء</li>
+                                    <li>التفاوض مع الموردين على آجال سداد أطول</li>
+                                    <li>إنشاء احتياطي نقدي للطوارئ</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="preview-footer">
+                    جميع الحقوق محفوظة © 2026 - تكاليف | حلول أعمال ذكية - مواد تدريبية 
+                </div>
+            `;
+        }
+    },
+    6: {
+        id: 6,
+        title: "الامتثال والرقابة الداخلية",
+        subtitle: "أنظمة الرقابة والحوكمة",
+        getHTML: function() {
+            return `
+                <div class="preview-header">
+                    <div class="company">تكاليف | حلول أعمال ذكية</div>
+                    <div class="title">${this.title}</div>
+                    <div class="subtitle">${this.subtitle}</div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">مفهوم الرقابة الداخلية</h3>
+                    <div class="preview-content">
+                        <p>إجراءات وسياسات تهدف إلى حماية أصول الشركة، ضمان دقة البيانات المالية، الالتزام بالقوانين واللوائح.</p>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">مكونات نظام الرقابة الداخلية (COSO)</h3>
+                    <div class="preview-content">
+                        <ol class="preview-list">
+                            <li>بيئة الرقابة: الهيكل التنظيمي، السياسات، النزاهة والقيم الأخلاقية</li>
+                            <li>تقييم المخاطر: تحديد وتحليل المخاطر التي تهدد تحقيق الأهداف</li>
+                            <li>الأنشطة الرقابية: إجراءات التفويض، الفصل بين الوظائف، المراجعة</li>
+                            <li>المعلومات والاتصالات: تدفق المعلومات المناسب</li>
+                            <li>أنشطة المراقبة: متابعة وتقييم أداء النظام</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">مبادئ الرقابة الداخلية</h3>
+                    <div class="preview-content">
+                        <ul class="preview-list">
+                            <li>الفصل بين الوظائف (الإيداع، الصرف، التسجيل)</li>
+                            <li>التفويض والإجازة (صلاحيات محددة)</li>
+                            <li>التوثيق السليم (مستندات مؤيدة)</li>
+                            <li>المراجعة الدورية (تسويات، جرد)</li>
+                            <li>الحماية المادية (أماكن آمنة)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="preview-footer">
+                    جميع الحقوق محفوظة © 2026 - تكاليف | حلول أعمال ذكية - مواد تدريبية
+                </div>
+            `;
+        }
+    },
+    7: {
+        id: 7,
+        title: "إعادة هيكلة الشركات",
+        subtitle: "دمج - استحواذ - إعادة تنظيم",
+        getHTML: function() {
+            return `
+                <div class="preview-header">
+                    <div class="company">تكاليف | حلول أعمال ذكية</div>
+                    <div class="title">${this.title}</div>
+                    <div class="subtitle">${this.subtitle}</div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="preview-section-title">أنواع إعادة الهيكلة</h3>
+                    <div class="preview-content">
+                        <ol class="preview-list">
+                            <li><strong>إعادة الهيكلة المالية:</strong>
+                                <ul class="preview-list">
+                                    <li>زيادة أو تخفيض رأس المال</li>
+                                    <li>إعادة تمويل الديون (Refinancing)</li>
+                                    <li>إعادة جدولة الديون (Rescheduling)</li>
+                                    <li>تحويل الديون إلى أسهم (Debt-to-Equity swap)</li>
+                                </ul>
+                            </li>
+                            <li><strong>إعادة الهيكلة الإدارية:</strong>
+                                <ul class="preview-list">
+                                    <li>تغيير الهيكل التنظيمي</li>
+                                    <li>إعادة توزيع الصلاحيات</li>
+                                    <li>ترشيد التكاليف الإدارية</li>
+                                    <li>تحسين كفاءة العمليات</li>
+                                </ul>
+                            </li>
+                            <li><strong>إعادة الهيكلة التشغيلية:</strong>
+                                <ul class="preview-list">
+                                    <li>تحسين كفاءة الإنتاج</li>
+                                    <li>الاستغناء عن الأصول غير المستغلة</li>
+                                    <li>الاستعانة بمصادر خارجية (Outsourcing)</li>
+                                    <li>إعادة هندسة العمليات</li>
+                                </ul>
+                            </li>
+                            <li><strong>عمليات الدمج والاستحواذ:</strong>
+                                <ul class="preview-list">
+                                    <li>الاندماج (Merger): دمج شركتين أو أكثر في كيان واحد</li>
+                                    <li>الاستحواذ (Acquisition): شراء شركة لأخرى</li>
+                                    <li>الاستحواذ المعكوس (Reverse takeover)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="preview-footer">
+                    جميع الحقوق محفوظة © 2026 - تكاليف | حلول أعمال ذكية - مواد تدريبية 
+                </div>
+            `;
+        }
+    }
+};
+
+let currentSampleId = 1;
+
+// تحميل PDF
+function downloadPDF(id) {
+    const sample = samples[id];
+    if (!sample) return;
+    
+    const content = sample.getHTML();
+    
+    // إنشاء محتوى HTML للـ PDF
+    const htmlContent = `
+        <!DOCTYPE html>
+        <html dir="rtl" lang="ar">
+        <head>
+            <meta charset="UTF-8">
+            <title>${sample.title}</title>
+            <style>
+                body { 
+                    font-family: 'Cairo', 'Traditional Arabic', Arial, sans-serif; 
+                    direction: rtl; 
+                    padding: 40px; 
+                    max-width: 800px; 
+                    margin: 0 auto;
+                }
+                .preview-header {
+                    text-align: center;
+                    margin-bottom: 40px;
+                    padding-bottom: 20px;
+                    border-bottom: 3px solid #1e4a3b;
+                }
+                .company {
+                    font-size: 28px;
+                    font-weight: bold;
+                    color: #1e4a3b;
+                }
+                .title {
+                    font-size: 24px;
+                    color: #2d6a4e;
+                    margin-top: 10px;
+                    font-weight: 700;
+                }
+                .subtitle {
+                    font-size: 16px;
+                    color: #6c757d;
+                    margin-top: 5px;
+                }
+                .preview-section {
+                    margin-bottom: 30px;
+                }
+                .preview-section-title {
+                    color: #1e4a3b;
+                    font-size: 20px;
+                    font-weight: 700;
+                    margin-bottom: 15px;
+                    padding-right: 10px;
+                    border-right: 5px solid #52b788;
+                }
+                .preview-content {
+                    color: #2d6a4e;
+                    line-height: 1.8;
+                    font-size: 16px;
+                }
+                .preview-list {
+                    list-style: none;
+                    margin-right: 20px;
+                }
+                .preview-list li {
+                    margin-bottom: 8px;
+                    padding-right: 20px;
+                    position: relative;
+                }
+                .preview-list li::before {
+                    content: "•";
+                    color: #52b788;
+                    font-weight: 700;
+                    position: absolute;
+                    right: 0;
+                    font-size: 18px;
+                }
+                .preview-footer {
+                    margin-top: 50px;
+                    padding-top: 20px;
+                    border-top: 2px solid #e4f2e4;
+                    text-align: center;
+                    color: #2d6a4e;
+                    font-size: 14px;
+                }
+            </style>
+        </head>
+        <body>
+            ${content}
+        </body>
+        </html>
+    `;
+    
+    // إنشاء Blob وفتحه في نافذة جديدة للطباعة إلى PDF
+    const blob = new Blob([htmlContent], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const printWindow = window.open(url, '_blank');
+    
+    // طباعة إلى PDF
+    if (printWindow) {
+        printWindow.onload = function() {
+            setTimeout(() => {
+                printWindow.print();
+            }, 500);
+        };
+    } else {
+        alert('الرجاء السماح للنوافذ المنبثقة لتحميل PDF');
+    }
+}
+
+// تحميل Word
+function downloadWord(id) {
+    const sample = samples[id];
+    if (!sample) return;
+    
+    const content = sample.getHTML();
+    
+    // إنشاء محتوى HTML لـ Word
+    const htmlContent = `
+        <!DOCTYPE html>
+        <html dir="rtl" lang="ar">
+        <head>
+            <meta charset="UTF-8">
+            <title>${sample.title}</title>
+            <style>
+                body { 
+                    font-family: 'Cairo', 'Traditional Arabic', Arial, sans-serif; 
+                    direction: rtl; 
+                    padding: 40px; 
+                    max-width: 800px; 
+                    margin: 0 auto;
+                }
+                .preview-header {
+                    text-align: center;
+                    margin-bottom: 40px;
+                    padding-bottom: 20px;
+                    border-bottom: 3px solid #1e4a3b;
+                }
+                .company {
+                    font-size: 28px;
+                    font-weight: bold;
+                    color: #1e4a3b;
+                }
+                .title {
+                    font-size: 24px;
+                    color: #2d6a4e;
+                    margin-top: 10px;
+                    font-weight: 700;
+                }
+                .subtitle {
+                    font-size: 16px;
+                    color: #6c757d;
+                    margin-top: 5px;
+                }
+                .preview-section {
+                    margin-bottom: 30px;
+                }
+                .preview-section-title {
+                    color: #1e4a3b;
+                    font-size: 20px;
+                    font-weight: 700;
+                    margin-bottom: 15px;
+                    padding-right: 10px;
+                    border-right: 5px solid #52b788;
+                }
+                .preview-content {
+                    color: #2d6a4e;
+                    line-height: 1.8;
+                    font-size: 16px;
+                }
+                .preview-list {
+                    list-style: none;
+                    margin-right: 20px;
+                }
+                .preview-list li {
+                    margin-bottom: 8px;
+                    padding-right: 20px;
+                    position: relative;
+                }
+                .preview-list li::before {
+                    content: "•";
+                    color: #52b788;
+                    font-weight: 700;
+                    position: absolute;
+                    right: 0;
+                    font-size: 18px;
+                }
+                .preview-footer {
+                    margin-top: 50px;
+                    padding-top: 20px;
+                    border-top: 2px solid #e4f2e4;
+                    text-align: center;
+                    color: #2d6a4e;
+                    font-size: 14px;
+                }
+            </style>
+        </head>
+        <body>
+            ${content}
+        </body>
+        </html>
+    `;
+    
+    const blob = new Blob([htmlContent], { type: 'application/msword' });
+    saveAs(blob, `${sample.title}.doc`);
+}
+
+// معاينة العينة
+function previewSample(id) {
+    currentSampleId = id;
+    const sample = samples[id];
+    if (!sample) return;
+    
+    document.getElementById('previewTitle').innerText = sample.title;
+    document.getElementById('previewContent').innerHTML = sample.getHTML();
+    document.getElementById('previewModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+// تحميل PDF الحالي من المعاينة
+function downloadCurrentPDF() {
+    downloadPDF(currentSampleId);
+}
+
+// تحميل Word الحالي من المعاينة
+function downloadCurrentWord() {
+    downloadWord(currentSampleId);
+}
+
+// إغلاق نافذة المعاينة
+function closePreviewModal() {
+    document.getElementById('previewModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// تحميل جميع العينات PDF
+function downloadAllPDF() {
+    for (let i = 1; i <= 7; i++) {
+        setTimeout(() => {
+            downloadPDF(i);
+        }, i * 1000);
+    }
+}
+
+// تحميل جميع العينات Word
+function downloadAllWord() {
+    for (let i = 1; i <= 7; i++) {
+        setTimeout(() => {
+            downloadWord(i);
+        }, i * 500);
+    }
+}
+
+// إغلاق المودال عند النقر خارج المحتوى
+window.onclick = function(event) {
+    const modal = document.getElementById('previewModal');
+    if (event.target == modal) {
+        closePreviewModal();
+    }
+}
+</script>
+</body>
+</html>
